@@ -58,7 +58,7 @@ public class Door : MonoBehaviour
             }
             if (timer >= 1)
             {
-                player.camera.transform.position = destination;
+                player.cam.transform.position = destination;
                 timer = 0;
                 startTimer=false;
             }

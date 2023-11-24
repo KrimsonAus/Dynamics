@@ -20,46 +20,36 @@ public class Player : MonoBehaviour
     public int coin;
     public float speed;
     [HideInInspector] public int damage;
+    public TMPro.TextMeshPro coinsText;
 
     [Header("Misc")]
-   [HideInInspector] public GameObject camera;
     public GameObject dir;
+
+    [HideInInspector] public GameObject cam;
    [HideInInspector] public int direction;
 
     public GameObject attack;
     //DEBUGCODE
     int selectedItem;
+
+    [HideInInspector] public bool onUI;
+    [HideInInspector] public bool canAttack;
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main.gameObject;
+        cam = Camera.main.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        coinsText.text = "$" + coin;
         transform.position += transform.up * Input.GetAxis("Vertical") * Time.deltaTime * speed + transform.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 
-        if(Input.GetAxis("Horizontal")> Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") > 0)
-        {
-            dir.transform.eulerAngles = new Vector3(0, 0, -90);
-            direction = 1;
-        }
-        if(Input.GetAxis("Vertical")< Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") < 0)
-        {
-            dir.transform.eulerAngles = new Vector3(0, 0, -180);
-            direction = 2;
-        }
-        if(Input.GetAxis("Horizontal") < Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") < 0)
-        {
-            dir.transform.eulerAngles = new Vector3(0, 0, -180 + -90);
-            direction= 3;
-        }
-        if(Input.GetAxis("Vertical") > Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") > 0)
-        {
-            dir.transform.eulerAngles = new Vector3(0, 0, 0);
-            direction = 0;
-        }
+        DetermineDir();
+        //DetermineMouseDir();
+
+        //dir.transform.eulerAngles = face mouse\\
 
         /*
         arms.transform.position -= transform.up * Input.GetAxis("Vertical") * Time.deltaTime * speed + transform.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed;
@@ -69,9 +59,22 @@ public class Player : MonoBehaviour
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(attack, dir.transform);
+                
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && equippedHeld1 != null)
+        {
+            if (canAttack)
+            {
+                Instantiate(attack, dir.transform.position, dir.transform.rotation);
+                canAttack = false;
+            }
+            if (equippedHeld1.spawnObjectOnUse)
+            {
+                Instantiate(equippedHeld1.objectToSpawn, dir.transform.position, dir.transform.rotation);
+            }
         }
 
         //rightHand = equiped item 1 - get sprite from item (if equipable)
@@ -152,10 +155,51 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*
-    healthToGive;
-    manaToGive;
-    staminaToGive;
-    coinToGive;
-    */
+    void DetermineMouseDir()
+    {
+        //rotation
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 5.23f;
+
+        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
+
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        dir.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
+    }
+
+    void DetermineDir()
+    {
+        if (Input.GetAxis("Horizontal") > Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") > 0)
+        {
+            dir.transform.eulerAngles = new Vector3(0, 0, -90);
+            direction = 1;
+        }
+        if (Input.GetAxis("Vertical") < Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") < 0)
+        {
+            dir.transform.eulerAngles = new Vector3(0, 0, -180);
+            direction = 2;
+        }
+        if (Input.GetAxis("Horizontal") < Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") < 0)
+        {
+            dir.transform.eulerAngles = new Vector3(0, 0, -180 + -90);
+            direction = 3;
+        }
+        if (Input.GetAxis("Vertical") > Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") > 0)
+        {
+            dir.transform.eulerAngles = new Vector3(0, 0, 0);
+            direction = 0;
+        }
+    }
+
+    public void Attack()
+    {
+        Instantiate(attack, dir.transform);
+
+        if (equippedHeld1 != null && equippedHeld1.spawnObjectOnUse)
+        {
+            Instantiate(equippedHeld1.objectToSpawn, dir.transform.position, dir.transform.rotation);
+        }
+    }
 }

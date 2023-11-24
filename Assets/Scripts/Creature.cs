@@ -37,6 +37,16 @@ public class Creature : MonoBehaviour
             }
             Destroy(gameObject);
         }
+
+        if(Vector2.Distance(transform.position,player.transform.position) < 0.5)
+        {
+            player.canAttack = true;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        player.Attack();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,12 +54,20 @@ public class Creature : MonoBehaviour
         if(collision.tag == "Attack")
         {
             collision.GetComponent<Collider2D>().enabled = false;
-            //print("Took damage");
-            health -= player.damage;
-            Vector3 direction = transform.position - player.transform.position;
-            direction.Normalize();
 
-            transform.position += (direction / 10) * player.damage;
+            if (collision.GetComponent<Projectile>() == null)
+            {
+                //print("Took damage");
+                health -= player.damage;
+
+                Vector3 direction = transform.position - player.transform.position;
+                direction.Normalize();
+                transform.position += (direction / 10) * player.damage;
+            }
+            else
+            {
+                health -= collision.GetComponent<Projectile>().damage;
+            }
         }
     }
 

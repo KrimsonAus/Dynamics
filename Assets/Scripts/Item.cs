@@ -8,6 +8,8 @@ public class Item : MonoBehaviour
     public bool weapon;
     public int attack;
     public int durability;
+    public bool spawnObjectOnUse;
+    public GameObject objectToSpawn;
     [Header("Consumable")]
     public bool consumable;
     public int healthToGive;

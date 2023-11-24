@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &886308341735362062
+--- !u!1 &1413216767878801497
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4935412401947925395}
-  - component: {fileID: 6118933733585084194}
+  - component: {fileID: 4981147502222134205}
+  - component: {fileID: 7360664535470666136}
   m_Layer: 0
-  m_Name: Gold
+  m_Name: StaffOfMesozia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4935412401947925395
+--- !u!4 &4981147502222134205
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886308341735362062}
+  m_GameObject: {fileID: 1413216767878801497}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.44, y: 0, z: -0.0038655773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6118933733585084194
+--- !u!114 &7360664535470666136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886308341735362062}
+  m_GameObject: {fileID: 1413216767878801497}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53e52106cc7e6fd4ab09822c5061a1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: 0
-  attack: 0
-  durability: 0
-  consumable: 1
+  weapon: 1
+  attack: 3
+  durability: 100
+  spawnObjectOnUse: 1
+  objectToSpawn: {fileID: 5411365728265607213, guid: 9834f2f7ab99afe41a92fc67c525b9a1, type: 3}
+  consumable: 0
   healthToGive: 0
   manaToGive: 0
   staminaToGive: 0
-  coinToGive: 1
-  sprite: {fileID: -3060143281572884098, guid: f3eb3246710f6ee429e006f328763fb3, type: 3}
-  equipable: 0
-  worth: 1
+  coinToGive: 0
+  sprite: {fileID: -8823208773543228215, guid: 3e2998f3535e94b43969a607c7645ddc, type: 3}
+  equipable: 1
+  worth: 10

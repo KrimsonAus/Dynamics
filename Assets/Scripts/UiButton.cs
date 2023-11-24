@@ -14,6 +14,7 @@ public class UiButton : MonoBehaviour
     public bool needCoinToBuy;
     public int cost;
     public Item itemToGive;
+    public TMPro.TextMeshPro costText;
 
     Player player;
     Manager manager;
@@ -27,7 +28,10 @@ public class UiButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (needCoinToBuy)
+        {
+            costText.text = "$"+cost;
+        }
     }
 
     private void OnMouseDown()

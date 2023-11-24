@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4fa17c15114032c408f6c24ed74c4756
+guid: ecbc46743e9f5d64ea32a832ed04df64
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638364539739350510
+  platformSettingsDirtyTick: 638364517489044386
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: SpiritThorn
+  - name: UIScaled
     originalName: 
-    pivot: {x: 0.1764706, y: 0.5294118}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 17
-      height: 17
-    spriteID: f5e9fc939b649a34e918a26eb507f3c8
+      width: 960
+      height: 512
+    spriteID: c9aa445b380a04045ba75447f294d2cf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,107 +139,23 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: SpiritThorn_Frame_1
-    originalName: 
-    pivot: {x: 0.5294118, y: 0.8235294}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 29
-      width: 17
-      height: 17
-    spriteID: c5787e779b1f4d2438a495c66ff554a1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 29}
-  - name: SpiritThorn_Frame_2
-    originalName: 
-    pivot: {x: 0.8235294, y: 0.47058824}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 29
-      y: 4
-      width: 17
-      height: 17
-    spriteID: 0d857efd5621a6947b2adef04fc0e4b6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 29, y: 4}
-  - name: SpiritThorn_Frame_3
-    originalName: 
-    pivot: {x: 0.47058824, y: 0.1764706}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 29
-      y: 29
-      width: 17
-      height: 17
-    spriteID: 5ed118fab8b6c884ebdb04952888da3c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 29, y: 29}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1246006864
-    name: SpiritThorn
+    guid: 121863810
+    name: UIScaled
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: SpiritThorn_Frame_0
+    - name: UIScaled
       frameIndex: 0
       cellRect:
-        x: 13
-        y: 7
-        width: 17
-        height: 17
-      spriteId: f5e9fc939b649a34e918a26eb507f3c8
-    - name: SpiritThorn_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 7
-        y: 2
-        width: 17
-        height: 17
-      spriteId: c5787e779b1f4d2438a495c66ff554a1
-    - name: SpiritThorn_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 2
-        y: 8
-        width: 17
-        height: 17
-      spriteId: 0d857efd5621a6947b2adef04fc0e4b6
-    - name: SpiritThorn_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 8
-        y: 13
-        width: 17
-        height: 17
-      spriteId: 5ed118fab8b6c884ebdb04952888da3c
+        x: 0
+        y: 0
+        width: 960
+        height: 512
+      spriteId: c9aa445b380a04045ba75447f294d2cf
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -293,4 +209,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 960, y: 512}
