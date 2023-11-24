@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class UiButton : MonoBehaviour
 {
+    [Header("Menu Button")]
     public bool disableMenu;
     public GameObject menuToDisable;
     public bool enableMenu;
     public GameObject menuToEnable;
 
-    public bool alterCoin;
-    public int coinAmountToAlter;
-
+    [Header("Purchase Button")]
     public bool needCoinToBuy;
     public int cost;
-
-    public bool giveItem;
     public Item itemToGive;
 
     Player player;
@@ -44,27 +41,14 @@ public class UiButton : MonoBehaviour
             menuToEnable.SetActive(true);
         }
 
-        if(alterCoin)
-        {
-            if(player.coin >= coinAmountToAlter)
-            {
-                player.coin += coinAmountToAlter;
-            }
-        }
-
+        
         if (needCoinToBuy)
         {
             if (player.coin >= cost)
             {
-                if (giveItem)
-                {
-                    manager.AddToInventory(itemToGive);
-                }
+                player.coin -= cost;
+                manager.AddToInventory(itemToGive);
             }
-        }
-        else if (giveItem)
-        {
-            manager.AddToInventory(itemToGive);
         }
     }
 }
