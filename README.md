@@ -1,5 +1,5 @@
 # Dynamics
-A game by Jai Vanderark
+h1 A game by Jai Vanderark
 
 Programming by Jai Vanderark
 
