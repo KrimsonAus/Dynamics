@@ -8,6 +8,8 @@ public class Manager : MonoBehaviour
     public GameObject spaceBarIndicator;
     public GameObject signUI;
     public TMPro.TextMeshPro signUIText;
+    public GameObject diagUI;
+    public TMPro.TextMeshPro diagText;
     // Start is called before the first frame update
     void Start()
     {

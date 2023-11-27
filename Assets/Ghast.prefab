@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768202148293142421}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.28, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -131,13 +131,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: 1
+  speed: 0.3
   health: 5
   damage: 1
   dropsItems: 1
   itemsToDrop:
-  - {fileID: 0}
-  - {fileID: 0}
-  directionFromPlayer: 0
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  - {fileID: 6118933733585084194, guid: 64532f31df628ec48b211074abef5f0a, type: 3}
+  detectionDistance: 3
+  attackDistance: 0.6
+  attackTime: 1
+  enemyAttack: {fileID: 4271371882463825265, guid: 6319599b3528d8a458367122c6e4ec5b, type: 3}
 --- !u!61 &1578889488461337891
 BoxCollider2D:
   m_ObjectHideFlags: 0

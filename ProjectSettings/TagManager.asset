@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Entity
   - Attack
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

@@ -202,4 +202,12 @@ public class Player : MonoBehaviour
             Instantiate(equippedHeld1.objectToSpawn, dir.transform.position, dir.transform.rotation);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "EnemyAttack")
+        {
+            
+        }
+    }
 }

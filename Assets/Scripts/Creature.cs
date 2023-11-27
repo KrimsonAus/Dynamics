@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
     public bool enemy;
+    public float speed;
     public int health;
     public int damage;
     Player player; 
@@ -13,8 +15,14 @@ public class Creature : MonoBehaviour
     public bool dropsItems;
     public Item[] itemsToDrop;
 
+    public float detectionDistance;
+    public float attackDistance;
 
-    [HideInInspector] public int directionFromPlayer;//player perspective = if player is left of this crtr dir = 1 (^0 >1 v2 <3)
+    bool attacking;
+    float attackTimer;
+    public float attackTime;
+
+    public GameObject enemyAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +49,33 @@ public class Creature : MonoBehaviour
         if(Vector2.Distance(transform.position,player.transform.position) < 0.5)
         {
             player.canAttack = true;
+        }
+
+        if(enemy && Vector2.Distance(transform.position, player.transform.position) < detectionDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
+        }
+
+        if(enemy && Vector2.Distance(transform.position, player.transform.position) < attackDistance)
+        {
+            attacking = true;
+        }
+        else
+        {
+            attacking=false;
+        }
+
+        if (attacking)
+        {
+            attackTimer += Time.deltaTime;
+
+            if(attackTimer > attackTime)
+            {
+                Instantiate(enemyAttack, player.transform.position, Quaternion.identity);
+                //attack
+                player.health -= damage;
+                attackTimer = 0;
+            }
         }
     }
 
