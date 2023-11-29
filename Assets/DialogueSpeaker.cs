@@ -49,6 +49,7 @@ public class DialogueSpeaker : MonoBehaviour
                             {
 
                                 player.GetComponent<QuestManager>().quests[i] = questToStart;
+                                player.GetComponent<QuestManager>().quests[i].started = true;
                                 break;
                             }
                         }
