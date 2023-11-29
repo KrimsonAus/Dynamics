@@ -10,6 +10,11 @@ public class DialogueSpeaker : MonoBehaviour
     [TextArea]
     public string[] dialogueText;
     public int index;
+    [Header("Quests")]
+    public bool startQuest;
+    public Quest questToStart;
+    public bool finishQuest;
+    public Quest questToFinish;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,19 @@ public class DialogueSpeaker : MonoBehaviour
                 }
                 else
                 {
+                    if (startQuest)
+                    {
+                        for (int i = 0; i < player.GetComponent<QuestManager>().quests.Length; i++)
+                        {
+                            if (player.GetComponent<QuestManager>().quests[i] == null)
+                            {
+
+                                player.GetComponent<QuestManager>().quests[i] = questToStart;
+                                break;
+                            }
+                        }
+                        startQuest = false;
+                    }
                     manager.diagUI.SetActive(false);
                 }
             }
